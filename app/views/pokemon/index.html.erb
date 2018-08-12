@@ -1,0 +1,68 @@
+
+
+<div class="container">
+
+
+
+<div class="card">
+
+<img class='gif' src="https://media.giphy.com/media/<%= @gif_id %>/giphy.gif" alt="Pokemon">
+<li class='name'><%=@pokemon_name%></li>
+<li class='health'>100HP</li>
+<li class='height'><%=@pokemon_name%> Pokemon Weight:<%=@pokemon_height%></li>
+<li class='weight'>Height:<%=@pokemon_weight%></li>
+<li class='candy'><%=@pokemon_candy%></li>
+<li class='spawn'><%=@pokemon_spawn_chance%></li>
+<li class='avg-spawn'><%=@pokemon_avg_spawns%></li>
+<li class='title1'>Let's Eat Together</li>
+<li class='rule1'>Heal 30 damage from both active pokemon</li>
+<li class='title2'>Quick Attack</li>
+<li class='rule2'>Flip a coin. If heads, this attack does 20 more damage.</li>
+
+
+
+<img src="<%=@pokemon_image%>" class='pokemon_image' alt="">
+
+<%if @pokemon_type%>
+<ul>Type:
+<%@pokemon_type.each do |t|%>
+<li class='type'>  <%=t%></li>
+<%end%>
+</ul>
+<%end%>
+
+
+
+<%if @pokemon_multipliers%>
+  <ul>
+<%@pokemon_multipliers.each do |m|%>
+<li class='multipliers'>  <%=m%></li>
+<%end%>
+</ul>
+<%end%>
+
+<%if @pokemon_weaknesses%>
+<ul>Weaknesses:
+<%@pokemon_weaknesses.each do |w|%>
+<li class='weakness'>  <%=w%></li>
+<%end%>
+</ul>
+<%end%>
+
+
+
+
+
+<div class="ball">
+<div class="inner"></div>
+</div>
+<div class="shadow"></div>
+<li class ='pokemon_search'>
+<%= form_tag(pokemon_index_path, method: :get) do %>
+<%= text_field_tag :term, params[:term] %>
+<%= submit_tag 'I CHOOSE YOU!', name:nil %>
+</li>
+<% end %>
+
+</div>
+</div>
