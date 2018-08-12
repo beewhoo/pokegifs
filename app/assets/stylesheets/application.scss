@@ -17,7 +17,6 @@
 
 
 
-
  $pokeRed: #ed2828;
  $pokeWhite: #eee;
  $pokeBlack: #000;
@@ -145,11 +144,17 @@
    background-size: cover;
    text-align: center;
    font-family:'Baloo';
+   margin: 0;
  }
 
- li {
+ li, ul{
   list-style: none;
+  text-align: left;
+  margin-left: 1em;
+  padding: 0;
+
  }
+
 
 
 
@@ -159,17 +164,17 @@
    background-repeat: no-repeat;
    background-size: cover;
    border: 20px solid yellow;
-   max-width: 50%;
-   height: 700px;
+   max-width: 80%;
+   height: auto;
    border-radius: 10px;
    position: relative;
  }
 
  .gif {
+   width:100%;
+   height: 200px;
    border-top: 40px solid gold;
    border-bottom: 34px solid sandybrown;
-   width:500px;
-   height:300px;
  }
 
  .name {
@@ -204,9 +209,10 @@
 
 
 .height,.weight{
-  color:grey;
+  color:white;
   position: absolute;
-  bottom: 324px;
+  top: 251px;
+  font-size: 11px;
 
 }
 
@@ -214,10 +220,14 @@
 right: 10px;
 }
 
-.candy, .spawn,  .avg-spawn, .title1, .rule1, .title2, .rule2, .type, .multipliers, .weakness{
-position: absolute;
-}
+
+
+
 
 .pokemon_search input{
-  font-size: 1.4em;
+  font-size: 1.5em;
+}
+
+.rule1, .rule2 {
+font-size: 0.8em;
 }

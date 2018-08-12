@@ -11,7 +11,32 @@
   </head>
 
 
+
+
+
+
+
+
+
+
   <body>
     <%= yield %>
+
   </body>
+
+  <div class="ball">
+
+  <div class="inner"></div>
+  </div>
+  <div class="shadow"></div>
+
+  <li class ='pokemon_search'>
+  <%= form_tag(pokemon_index_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term] %>
+  <%= submit_tag 'I CHOOSE YOU!', name:nil %>
+  </li>
+  <% end %>
+
+
+
 </html>
