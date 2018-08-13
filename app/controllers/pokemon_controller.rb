@@ -25,37 +25,38 @@ class PokemonController < ApplicationController
     @gif_id = gif_body['data'].first['id']
 
 
-    if params[:term]
+        if params[:term]
 
-      pokemon_body['pokemon'].each do |poke|
+          pokemon_body['pokemon'].each do |poke|
 
-      if poke['name'].downcase == params[:term]
+          if poke['name'].downcase == params[:term]
 
-      @pokemon_image         = poke['img']
-      @pokemon_id           = poke["id"]
-      @pokemon_name         = poke["name"]
-      @pokemon_type         = poke["type"]
-      @pokemon_height       = poke["height"]
-      @pokemon_weight       = poke["weight"]
-      @pokemon_candy        = poke["candy"]
-      @pokemon_spawn_chance = poke["spawn_chance"]
-      @pokemon_avg_spawns   = poke["avg_spawns"]
-      @pokemon_spawn_time   = poke["spawn_time"]
-      @pokemon_multipliers  = poke["multipliers"]
-      @pokemon_weaknesses   = poke["weaknesses"]
+          @pokemon_image         = poke['img']
+          @pokemon_id           = poke["id"]
+          @pokemon_name         = poke["name"]
+          @pokemon_type         = poke["type"]
+          @pokemon_height       = poke["height"]
+          @pokemon_weight       = poke["weight"]
+          @pokemon_candy        = poke["candy"]
+          @pokemon_spawn_chance = poke["spawn_chance"]
+          @pokemon_avg_spawns   = poke["avg_spawns"]
+          @pokemon_spawn_time   = poke["spawn_time"]
+          @pokemon_multipliers  = poke["multipliers"]
+          @pokemon_weaknesses   = poke["weaknesses"]
 
 
-      gif_response = HTTParty.get("https://api.giphy.com/v1/gifs/search?api_key=#{key}&q=#{@pokemon_name}&rating=g")
-      gif_body = JSON.parse(gif_response.body)
-      @gif_id = gif_body['data'].first['id']
+          gif_response = HTTParty.get("https://api.giphy.com/v1/gifs/search?api_key=#{key}&q=#{@pokemon_name}&rating=g")
+          gif_body = JSON.parse(gif_response.body)
+          @gif_id = gif_body['data'].first['id']
 
+        end
+
+
+      end
     end
 
-
-    end
   end
 
-end
 
 
 
@@ -63,10 +64,5 @@ end
 
 
 
-
-
-    def show
-
-    end
 
 end

@@ -1,43 +1,37 @@
 
+<div id="card">
+  <div id="background">
+    <h1><%=@pokemon_name%></h1>
+    <li class='health'>HEALTH <span>100HP</span></li>
+    <li class='gif'><img class='gif' src="https://media.giphy.com/media/<%= @gif_id %>/giphy.gif" alt="Pokemon"></li>
+    <li class='title'>Quick Attack</li>
+    <li class='rule'>Flip a coin. If heads, this attack does 20 more damage.</li>
+    <li class='title'>Let's Eat Together</li>
+    <li class='rule'>Heal 30 damage from both active pokemon</li>
+    <li class='avg-spawn'>avg. spawn: <%=@pokemon_avg_spawns%> spawn chance: <%=@pokemon_spawn_chance%></li><br>
+    <li class='weight'><span>weight/height: </span><%=@pokemon_weight%>/<%=@pokemon_height%></li>
+    <img src="<%=@pokemon_image%>" class='pokemon_image' alt="">
+
+    <%if @pokemon_type%><ul class='type'>type:<li>
+    <%@pokemon_type.each do |t|%>
+     <%=t%>,
+    <%end%>
+    </li>
+    </ul>
+    <%end%>
 
 
 
+    <%if @pokemon_weaknesses%>
+    <ul class='weakness'>weaknesses:<li>
+    <%@pokemon_weaknesses.each do |w|%>
+    <%=w%>,
+    <%end%>
+    <li>
+    </ul>
+    <%end%>
 
+    <ul>
 
-<div class="card">
-
-<img class='gif' src="https://media.giphy.com/media/<%= @gif_id %>/giphy.gif" alt="Pokemon">
-<li class='name'><%=@pokemon_name%></li>
-<li class='health'>100HP</li>
-<li class='height'><%=@pokemon_name%> Pokemon Weight:<%=@pokemon_height%></li>
-<li class='weight'>height: <%=@pokemon_weight%></li>
-<li class='candy'>candy: <%=@pokemon_candy%></li>
-<li class='spawn'>spawn chance: <%=@pokemon_spawn_chance%></li>
-<li class='avg-spawn'>avg. spawn: <%=@pokemon_avg_spawns%></li><br>
-<li class='title1'>Let's Eat Together</li>
-<li class='rule1'>Heal 30 damage from both active pokemon</li>
-<li class='title2'>Quick Attack</li>
-<li class='rule2'>Flip a coin. If heads, this attack does 20 more damage.</li>
-
-
-
-<img src="<%=@pokemon_image%>" class='pokemon_image' alt="">
-
-<%if @pokemon_type%>
-<ul class='type'>type:<br>
-<%@pokemon_type.each do |t|%>
-<li> <%=t%></li>
-<%end%>
-</ul>
-<%end%>
-
-
-
-
-<%if @pokemon_weaknesses%>
-<ul class='weakness'>weaknesses:<br>
-<%@pokemon_weaknesses.each do |w|%>
-<li>  <%=w%></li>
-<%end%>
-</ul>
-<%end%>
+  </div>
+</div>
