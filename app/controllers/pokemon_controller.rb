@@ -29,7 +29,7 @@ class PokemonController < ApplicationController
 
           pokemon_body['pokemon'].each do |poke|
 
-          if poke['name'].downcase == params[:term]
+          if poke['name'].downcase == params[:term].downcase
 
           @pokemon_image         = poke['img']
           @pokemon_id           = poke["id"]
